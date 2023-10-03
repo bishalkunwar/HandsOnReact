@@ -9,7 +9,8 @@ export default function Main(){
     )
 }
 
-function Contents({image, title, desc}){
+function Contents(props){
+    const {image, title, desc} = props;
     return(
         <div className="main-container" style={{border:"1px solid black", display: "flex", flexWrap: "wrap", flexDirection: "column", textAlign: "center"}}>
             <img src={image} alt="img" />
