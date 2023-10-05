@@ -2,9 +2,35 @@
 export default function Main(){
     return(
         <div>
-            <ProfileCard image="https://i.imgur.com/xRxg8BPb.jpg" title="Google Alexa" handle="This is the Google Alexa Image" description="This is the Google Alexa Image, This is the Google Alexa Image, This is the Google Alexa Image, This is the Google Alexa Image."/>
+            <div className="container">
+                <section className="section">
+                    <div className="columns">
+                        <div className="column is-4">
+                            <ProfileCard image="https://i.imgur.com/xRxg8BPb.jpg" title="Google Alexa" handle="@bishal" description="This is the Google Alexa Image, This is the Google Alexa Image, This is the Google Alexa Image, This is the Google Alexa Image."/>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div className="container">
+                <section className="section">
+                    <div className="columns">
+                        <div className="column is-4">
+                            <ProfileCard image="https://i.imgur.com/xRxg8BPb.jpg" title="Google Alexa" handle="@bishal" description="This is the Google Alexa Image, This is the Google Alexa Image, This is the Google Alexa Image, This is the Google Alexa Image."/>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div className="container">
+                <section className="section">
+                    <div className="columns">
+                        <div className="column is-4">
+                            <ProfileCard image="https://i.imgur.com/xRxg8BPb.jpg" title="Google Alexa" handle="@bishal" description="This is the Google Alexa Image, This is the Google Alexa Image, This is the Google Alexa Image, This is the Google Alexa Image."/>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
-
+        
             
     );
 };
@@ -28,33 +54,19 @@ function ProfileCard({image, media, title, handle, description}){
     return(
         <div className="card">
             <div className="card-image">
-                <figure className="image">
+                <figure className="image is-1by1">
                     <img src={image} alt="Main Image1"/>  
                 </figure>
             </div>
             <div className="card-content">
-                <div className="media">
-                    <div className="media-left">
-                        <figure className="image is-4by3">
-                            <img src={media} alt="first media content"/>
-                        </figure>
-                    </div>
-                </div>
                 <div className="media-content">
-                    <div className="title is-4">
-                        <h6>{title}</h6>
-                    </div>
-                    <div className="subtitle is-6">
-                        <p>{handle}</p>
-                    </div>
-                </div>
-                <div className="content">
-                    <div className="content is-6">
-                        <p>{description}</p>
-                    </div>
-                </div>
+                   <p className="title is-4">{title}</p>
+                   <p className="title is-6">{handle}</p>
+                </div>   
             </div>
-
+            <div className="content">
+                <p>{description}</p>
+            </div>
         </div> 
 
     );
