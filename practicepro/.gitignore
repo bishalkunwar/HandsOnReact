@@ -21,3 +21,11 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+access_key: KUVBYR2VZiDoeJ1K9UGjlfq4xMd3ZOa0DApvsoocI84
+
+secret_key: -iohqLZnWdq58CKvuIJb35X72W82nbH9PkYRX_VVkzU
+
+location: https://api.unsplash.com/
+
