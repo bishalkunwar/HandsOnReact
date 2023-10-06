@@ -2,6 +2,6 @@
 export default function CarLists(){
     
     return(
-        <div>hello car lists</div>
+        <div>hello car lists ..</div>
     );
 };
