@@ -1,4 +1,7 @@
+import "./Main.css";
+
 import {useState} from 'react';
+import ShowAnimals from './ShowAnimals';
 
 function getRandonAnimal(){
     const animals = ["bird", "cat", "cow", "dog", "horse"];
@@ -14,10 +17,14 @@ export default function Main(){
         setAnimals([...animals, getRandonAnimal()]);
     }
 
+    const renderAnimals = animals.map((animal, index)=>{
+        return(<ShowAnimals type={animal} key={index}/>)
+    })
+
     return(
-        <div>
+        <div className="main">
             <button onClick={handleClick}>Add Animal</button>
-            <div>Animals: {animals}</div>
+            <div className="animal-list">Animals: {renderAnimals}</div>
         </div>
     );
 };
