@@ -1,7 +1,16 @@
 
-export default function SearchBar(){
+export default function SearchBar({onSubmit}){
     
+    const handleClick = () => {
+        onSubmit('cars');
+    }
+
     return(
-        <div>hello search bar</div>
+        <div>
+            <input /><br/>
+            <button onClick={handleClick}>
+                Search
+            </button>
+        </div>
     );
 };
