@@ -1,16 +1,17 @@
 
 export default function SearchBar({onSubmit}){
     
-    const handleClick = () => {
-        onSubmit('cars');
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        // console.log("I need to tell something to my parent");
+        onSubmit("cars");
     }
 
     return(
         <div>
-            <input /><br/>
-            <button onClick={handleClick}>
-                Search
-            </button>
+            <form onSubmit={handleFormSubmit}>
+                <input />
+            </form>
         </div>
     );
 };
