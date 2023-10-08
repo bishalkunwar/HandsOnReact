@@ -17,7 +17,9 @@ export default function SearchBar({onSubmit}){
     return(
         <div>
             <form onSubmit={handleFormSubmit}>
-                <input value={term} onChange={handleChange}/>
+                <input value={term} onChange={handleChange}/><br/>
+                {term}<br/>
+                {term.length <= 3 && 'Input length looks too low'}
             </form>
         </div>
     );
