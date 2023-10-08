@@ -1,7 +1,12 @@
+import CarShow from "./CarShow";
 
-export default function CarLists(){
+export default function CarLists({data}){
     
+    const renderedImage = data.map((image)=>{
+        return <CarShow image={image}/>
+    });
+
     return(
-        <div>hello car lists ..</div>
+        <div>{renderedImage}</div>
     );
 };

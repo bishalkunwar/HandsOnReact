@@ -1,17 +1,21 @@
-// import Main from "./Components/ReusableCompTry/Main";
+import {useState} from 'react';
 import SearchBar from "./Components/CarSearchApp.js/SearchBar";
+import searchImages from "./api";
+import CarLists from "./Components/CarSearchApp.js/CarList";
 
 function App() {
   
-  const handleSubmit=(term)=>{
-    console.log("Do search me", term);
-    //onsubmit();
+  const[images, setImages] = useState([]);
+
+  const handleSubmit=async(term)=>{
+    const responded = await searchImages(term);
+    setImages(responded);
   };
 
   return (
     <div className="App">
-        {/* <Main/>     */}
         <SearchBar onSubmit={handleSubmit} />
+        <CarLists data = {images}/>
     </div>
   );
 }

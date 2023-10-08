@@ -1,7 +1,7 @@
 
-export default function CarShow(){
+export default function CarShow({image}){
     
     return(
-        <div>hello car show</div>
+        <div key={image.id}>{image}</div>
     );
 };
