@@ -1,3 +1,4 @@
+import './ImageList.css';
 import CarShow from "./CarShow";
 
 export default function CarLists({data}){
@@ -7,6 +8,6 @@ export default function CarLists({data}){
     });
 
     return(
-        <div>{renderedImage}</div>
+        <div className="image-list">{renderedImage}</div>
     );
 };

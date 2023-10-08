@@ -1,3 +1,4 @@
+import './SearchBar.css';
 import {useState} from 'react';
 
 export default function SearchBar({onSubmit}){
@@ -15,8 +16,9 @@ export default function SearchBar({onSubmit}){
     }
 
     return(
-        <div>
+        <div className='search-bar'>
             <form onSubmit={handleFormSubmit}>
+                <label>Search For Some Images</label>
                 <input value={term} onChange={handleChange}/><br/>
                 {term}<br/>
                 {term.length <= 3 && 'Input length looks too low'}
