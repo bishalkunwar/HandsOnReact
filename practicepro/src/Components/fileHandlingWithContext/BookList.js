@@ -1,7 +1,14 @@
+import BookShow from "./BookShow";
 
-export default function BookList(){
+function BookList({books}){
+    const renderedBooks = books.map((book)=>{
+        console.log(book.title);
+        return <BookShow key={book.id} book={book}/>
+    });
 
     return(
-        <p>book Listing...</p>
-    )
-}
+        <div className="book-list">{renderedBooks}</div>
+    );
+};
+
+export default BookList;

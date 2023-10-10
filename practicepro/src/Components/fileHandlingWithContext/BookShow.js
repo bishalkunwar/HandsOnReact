@@ -1,7 +1,10 @@
 
-export default function BookShow(){
+export default function BookShow({book}){
 
     return(
-        <p>book Showing...</p>
-    )
-}
+        <div className="book-show">
+            {/* <p>{book.id}</p><br/> */}
+            <p>{book.title}</p><br/>
+        </div>
+    );
+};

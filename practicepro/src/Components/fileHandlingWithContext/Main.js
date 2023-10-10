@@ -1,8 +1,9 @@
 import {useState} from 'react';
 import BookCreate from './BookCreate';
+import BookList from './BookList';
 
 export default function Main(){
-    const[books, setBooks] = useState('');
+    const[books, setBooks] = useState([]);
     
     const createBook =(title) => {
         const updatedBooks = [...books, {id: Math.round(Math.random()*9999), title}];
@@ -10,9 +11,9 @@ export default function Main(){
     };
     
     return(
-        <div>
-            {books.length}
-            <BookCreate onCreate={createBook}/>
+        <div className='main'>
+            <BookList books={books}/>
+            <BookCreate onCreate={createBook}/>  
         </div>
     );
 };
