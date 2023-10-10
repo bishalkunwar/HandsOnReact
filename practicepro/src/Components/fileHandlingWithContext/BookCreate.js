@@ -16,8 +16,8 @@ export default function BookCreate({onCreate}){
     return(
         <div>
             <form onSubmit = {handleSubmit}>
-                <label>Give me a Title: </label>
-                <input value={title} onChange={handleChange}/>
+                <label>Title: </label><br/>
+                <input value={title} onChange={handleChange}/><br/>
                 <button>Create.!</button>
             </form>
         </div>
