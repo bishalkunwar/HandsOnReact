@@ -5,6 +5,11 @@ import BookList from './BookList';
 export default function Main(){
     const[books, setBooks] = useState([]);
     
+    const createBook =(title) => {
+        const updatedBooks = [...books, {id: Math.round(Math.random()*9999), title}];
+        setBooks(updatedBooks);
+    };
+
     const deleteBookById = (id)=>{
         const updatedBooks = books.filter((book)=>{
             return book.id !== id;
@@ -13,14 +18,20 @@ export default function Main(){
         setBooks(updatedBooks);
     };
 
-    const createBook =(title) => {
-        const updatedBooks = [...books, {id: Math.round(Math.random()*9999), title}];
+    const updateBookById = (id, newTitle) => {
+        const updatedBooks = books.map((book) => {
+            if(book.id===id){
+                return{...book, title: newTitle}
+            }
+            return book;
+        });
+
         setBooks(updatedBooks);
     };
     
     return(
         <div className='main'>
-            <BookList books={books} onDelete={deleteBookById}/>
+            <BookList books={books} onDelete={deleteBookById} onUpdate={updateBookById}/>
             <BookCreate onCreate={createBook}/>  
         </div>
     );
