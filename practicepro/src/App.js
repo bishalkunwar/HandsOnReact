@@ -1,14 +1,15 @@
-import { useState } from "react";
-import BookCreate from "./Components/fileHandlingWithContext/BookCreate";
+// import { useState } from "react";
+// import BookCreate from "./Components/fileHandlingWithContext/BookCreate";
+import Main from "./Components/fileHandlingWithContext/Main";
 
 function App(){
-  const[books, setBooks] = useState('');
+  // const[books, setBooks] = useState('');
 
-  const createBook = (title) => {
-    console.log("Need to create a boobs: ", title);
-  }
+  // const createBook = (title) => {
+  //   console.log("Need to create a boobs: ", title);
+  // }
   return(
-    <BookCreate onCreate={createBook}/>
+    <Main/>
   );
 };
 
