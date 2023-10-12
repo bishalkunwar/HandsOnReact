@@ -5,11 +5,11 @@ import BookList from './BookList';
 import BooksContext from '../../context/books';
 
 export default function Main(){
-    const {fetchBooks} = useContext(BooksContext);
+    const {stableFetchBooks} = useContext(BooksContext);
 
     useEffect(()=>{
-        fetchBooks();
-    }, []);
+        stableFetchBooks();
+    }, [stableFetchBooks]);
 
     
     return(
