@@ -2,6 +2,11 @@ import Button from "./Button";
 
 export default function Home(){
     return(
-        <Button/>
+        <div>
+            <Button>Click me</Button>
+            <Button>Click me</Button>
+            <Button>Click me</Button>
+        </div>
+        
     );
 };
