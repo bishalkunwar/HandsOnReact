@@ -13,9 +13,11 @@ export default function Accordion({items}){
         const isExpanded = index===expandedIndex;
         const content = isExpanded&&<div>{item.content}</div>
 
+        const icon = <span>{isExpanded?'Down':'Left'}</span>
+
        return(
         <div key={item.id}>
-            <div onClick={()=>handleClick(index)}>{item.label}</div>
+            <div onClick={()=>handleClick(index)}>{item.label}  {icon}</div>
             {content}
         </div>
        )
