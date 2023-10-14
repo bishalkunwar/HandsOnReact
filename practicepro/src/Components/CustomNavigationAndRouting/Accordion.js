@@ -6,12 +6,14 @@ export default function Accordion({items}){
 
     // this function and function called into the jsx is the combination of shorthand and longhand function.
     const handleClick = (itemIndex)=>{
-        if(expandedIndex === itemIndex){
-            setExpandedIndex(-1);
-        }else{
-            setExpandedIndex(itemIndex);
-        }
-    }
+        setExpandedIndex((currentExpandedIndex)=>{
+            if(currentExpandedIndex ===itemIndex){
+                return -1;
+            }else{
+                return itemIndex;
+            }
+        });
+    };
 
     const renderedItems = items.map((item, index)=>{
         const isExpanded = index===expandedIndex;
