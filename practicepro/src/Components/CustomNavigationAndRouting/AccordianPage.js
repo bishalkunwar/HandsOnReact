@@ -1,7 +1,15 @@
 // import Accordion from "../CustomNavigationAndRouting/Accordion";
 import DropDown from './DropDown';
+import { useState } from 'react';
 
 export default function AccordionPage(){
+    
+    const[selection, setSelection] = useState(null);
+    
+    const handleSelect = (option)=>{
+        setSelection(option);
+    };
+
     const options = [
         {label: 'Red', value: 'Red'},
         {label: 'Blue', value: 'Blue'},
@@ -9,6 +17,6 @@ export default function AccordionPage(){
         {label: 'Dark', value: 'Dark'},
     ];
 
-    return <DropDown options={options}/>;
+    return <DropDown options={options} selection={selection} onSelect={handleSelect}/>;
  
 }

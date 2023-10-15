@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function DropDown({options}){
+export default function DropDown({options, selection, onSelect}){
     const[expand, setExpand] = useState(false);
     
     const handleClik = (itemExpansion)=>{
@@ -9,7 +9,12 @@ export default function DropDown({options}){
 
     const handleOptionClick =(option)=>{
         setExpand(false);
-        console.log(option);
+        onSelect(option);
+    };
+
+    let content = "Select...";
+    if(selection){
+        content = selection.label;   
     };
 
     const renderedItems = options.map((option)=>{
@@ -23,7 +28,7 @@ export default function DropDown({options}){
 
     return(
         <div>
-            <div onClick={()=>handleClik(expand)}>Select...</div>
+            <div onClick={()=>handleClik(expand)}>{content}</div>
             {expand && <div>{renderedItems}</div>}
         </div>
     )
