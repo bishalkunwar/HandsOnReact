@@ -12,10 +12,10 @@ export default function DropDown({options, selection, onSelect}){
         onSelect(option);
     };
 
-    let content = "Select...";
-    if(selection){
-        content = selection.label;   
-    };
+    // let content = "Select...";
+    // if(selection){
+    //     content = selection.label;   
+    // };
 
     const renderedItems = options.map((option)=>{
         return(
@@ -28,7 +28,7 @@ export default function DropDown({options, selection, onSelect}){
 
     return(
         <div>
-            <div onClick={()=>handleClik(expand)}>{content}</div>
+            <div onClick={()=>handleClik(expand)}>{selection?.label || 'Select...'}</div>
             {expand && <div>{renderedItems}</div>}
         </div>
     )
