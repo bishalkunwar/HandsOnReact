@@ -1,11 +1,12 @@
 // import Accordion from "../CustomNavigationAndRouting/Accordion";
 import DropDown from './DropDown';
-import { useState } from 'react';
+import { useState} from 'react';
 
 export default function AccordionPage(){
     
     const[selection, setSelection] = useState(null);
-    
+ 
+
     const handleSelect = (option)=>{
         setSelection(option);
     };
@@ -17,6 +18,10 @@ export default function AccordionPage(){
         {label: 'Dark', value: 'Dark'},
     ];
 
-    return <DropDown options={options} value={selection} onChange={handleSelect}/>;
- 
+    return( 
+        <div className='flex'>
+            <DropDown options={options} value={selection} onChange={handleSelect}/>;
+            <DropDown options={options} value={selection} onChange={handleSelect}/>;
+        </div>
+    )
 }

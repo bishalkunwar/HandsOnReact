@@ -1,10 +1,25 @@
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { GoChevronDown } from "react-icons/go";
 import Panel from "./Panel";
 
 export default function DropDown({options, value, onChange}){
     const[expand, setExpand] = useState(false);
-    
+    const divEl = useRef();
+
+
+    useEffect(()=>{
+        const handler = (event)=>{
+            if(!divEl.current.contains(event.target)){
+                setExpand(false);
+            }
+        };
+       document.addEventListener('click', handler, true); 
+
+       return () =>{
+        document.removeEventListener('click', handler);
+       }
+    })
+
     const handleClik = (itemExpansion)=>{
         setExpand(!itemExpansion);
     };
@@ -29,9 +44,9 @@ export default function DropDown({options, value, onChange}){
 
 
     return(
-        <div className="w-48 relative">
-            <Panel className="flex justify-between items-center cursor-pointer border rounded p-3 shadow bg-gray-300 w-full" onClick={()=>handleClik(expand)}>{value?.label || 'Select...'} <GoChevronDown className="text-2xl"/></Panel>
-            {expand && <Panel className="absolute top-full border rounded p-3 shadow bg-white w-full">{renderedItems}</Panel>}
+        <div  ref={divEl} className="w-48 relative">
+            <Panel className="flex justify-between items-center cursor-pointer" onClick={()=>handleClik(expand)}>{value?.label || 'Select...'} <GoChevronDown className="text-lg"/></Panel>
+            {expand && <Panel className="absolute top-full ">{renderedItems}</Panel>}
         </div>
     )
 };
