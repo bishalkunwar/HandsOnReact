@@ -1,8 +1,9 @@
 // import { useState } from "react";
 // import BookCreate from "./Components/fileHandlingWithContext/BookCreate";
 // import Main from "./Components/fileHandlingWithContext/Main";
-import ButtonPages from "./Components/Pages/ButtonPages";
-import Home from "./Components/CustomNavigationAndRouting/Home";
+// import ButtonPages from "./Components/Pages/ButtonPages";
+// import Home from "./Components/CustomNavigationAndRouting/Home";
+import AccordionPage from "./Components/CustomNavigationAndRouting/AccordianPage";
 
 function App(){
   // const[books, setBooks] = useState('');
@@ -12,8 +13,7 @@ function App(){
   // }
   return(
     <div>
-      <ButtonPages/>
-      <Home/>
+      <AccordionPage/>
     </div>
     
   );
