@@ -17,6 +17,6 @@ export default function AccordionPage(){
         {label: 'Dark', value: 'Dark'},
     ];
 
-    return <DropDown options={options} selection={selection} onSelect={handleSelect}/>;
+    return <DropDown options={options} value={selection} onChange={handleSelect}/>;
  
 }
