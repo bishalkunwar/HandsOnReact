@@ -2,8 +2,10 @@ import classNames from "classnames"
 
 export default function Panel({children, classNames, ...rest}){
 
-    const finalClassNames = classNames('');
+    const finalClassNames = classNames('border rounded p-3 shadow bg-white w-full'); 
     return(
-        <p>this is a panel to try reusable components</p>
-    )
-}
+        <div {...rest} className={finalClassNames}>
+            {children}
+        </div>
+    );
+};

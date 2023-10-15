@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { GoChevronDown } from "react-icons/go";
+import Panel from "./Panel";
 
 export default function DropDown({options, value, onChange}){
     const[expand, setExpand] = useState(false);
@@ -29,8 +30,8 @@ export default function DropDown({options, value, onChange}){
 
     return(
         <div className="w-48 relative">
-            <div className="flex justify-between items-center cursor-pointer border rounded p-3 shadow bg-gray-300 w-full" onClick={()=>handleClik(expand)}>{value?.label || 'Select...'} <GoChevronDown className="text-2xl"/></div>
-            {expand && <div className="absolute top-full border rounded p-3 shadow bg-white w-full">{renderedItems}</div>}
+            <Panel className="flex justify-between items-center cursor-pointer border rounded p-3 shadow bg-gray-300 w-full" onClick={()=>handleClik(expand)}>{value?.label || 'Select...'} <GoChevronDown className="text-2xl"/></Panel>
+            {expand && <Panel className="absolute top-full border rounded p-3 shadow bg-white w-full">{renderedItems}</Panel>}
         </div>
     )
 };
