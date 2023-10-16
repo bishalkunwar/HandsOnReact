@@ -1,19 +1,10 @@
-// import { useState } from "react";
-// import BookCreate from "./Components/fileHandlingWithContext/BookCreate";
-// import Main from "./Components/fileHandlingWithContext/Main";
-// import ButtonPages from "./Components/Pages/ButtonPages";
-// import Home from "./Components/CustomNavigationAndRouting/Home";
-import AccordionPage from "./Components/CustomNavigationAndRouting/AccordianPage";
+import Home from "./Components/Pages/Home";
 
 function App(){
-  // const[books, setBooks] = useState('');
 
-  // const createBook = (title) => {
-  //   console.log("Need to create a boobs: ", title);
-  // }
   return(
     <div>
-      <AccordionPage/>
+      <Home/>
     </div>
     
   );

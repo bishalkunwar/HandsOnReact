@@ -10,7 +10,7 @@ export default function DropDown({options, value, onChange}){
     useEffect(()=>{
         const handler = (event)=>{
             if(!divEl.current.contains(event.target)){
-                setExpand(false);
+                setExpand(false); 
             }
         };
        document.addEventListener('click', handler, true); 

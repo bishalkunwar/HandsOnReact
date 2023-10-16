@@ -1,6 +1,6 @@
-import Accordion from './Accordion';
+import Accordion from '../CustomNavigationAndRouting/Accordion';
 
-export default function Home(){
+export default function AccordionPage(){
 
     const items = [
         {
