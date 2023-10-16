@@ -3,9 +3,7 @@ import {GoBell} from 'react-icons/go';
 
 export default function ButtonPages(){
 
-    const handleClick = ()=>{
-        alert("button clicked,")
-    }
+    const handleClick = ()=>{}
 
     return(
         <div>
