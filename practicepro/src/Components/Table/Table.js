@@ -1,7 +1,11 @@
+import { Fragment } from "react";
 
 export default function Table({fruits, config, keyFn}){
- 
+
     const renderedHeaders = config.map((headers)=>{
+        if(headers.header){
+            return <Fragment key={headers.label}>{headers.header()}</Fragment>;
+        }
         return(
             <th key={headers.label}>{headers.label}</th>
         );
