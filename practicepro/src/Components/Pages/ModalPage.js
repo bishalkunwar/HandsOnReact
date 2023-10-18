@@ -13,11 +13,20 @@ export default function ModalPage(){
         setShowModel(false);
     };
 
-    return(
+    const actionBar = (
+        <div>
+            <Button onClick={handleClose} primary>I Accept</Button>
+        </div>
+    );
 
+    const message = (
+        <p>You will have to accept our aggrement.</p>
+    );
+
+    return(
         <div className="relative">
             <Button primary onClick={handleClick}>Open Model</Button>
-            {showModel && <Modal onClose={handleClose}/>}
+            {showModel && <Modal onClose={handleClose} actionBar={actionBar} children={message}/>}
         </div>
     );
 };
