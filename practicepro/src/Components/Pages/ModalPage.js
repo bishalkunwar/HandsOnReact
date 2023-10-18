@@ -8,11 +8,16 @@ export default function ModalPage(){
     const handleClick=()=>{
         setShowModel(true);
     }
+
+    const handleClose = ()=>{
+        setShowModel(false);
+    };
+
     return(
 
-        <div>
+        <div className="relative">
             <Button primary onClick={handleClick}>Open Model</Button>
-            {showModel && <Modal/>}
+            {showModel && <Modal onClose={handleClose}/>}
         </div>
     );
 };
