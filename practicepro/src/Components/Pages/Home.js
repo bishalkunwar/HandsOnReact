@@ -5,6 +5,7 @@ import DropDownPage from "./DropDownPages";
 // import Link from "../CustomNavigationAndRouting/Link";
 import Route from "../CustomNavigationAndRouting/Route";
 import Sidebar from "../CustomNavigationAndRouting/Sidebar";
+import ModalPage from "./ModalPage";
 
 export default function Home(){
 
@@ -16,7 +17,7 @@ export default function Home(){
          */}
             <Sidebar/>
             <div>
-                <Route path="/">
+                <Route path="/accordion">
                         <AccordionPage/>
                 </Route>
 
@@ -27,7 +28,10 @@ export default function Home(){
                 <Route path="/dropDown">
                         <DropDownPage/>
                 </Route>
+                <Route path="/modalPage">
+                    <ModalPage/>
+                </Route>
             </div>
         </div>
-    );
+    )
 }
