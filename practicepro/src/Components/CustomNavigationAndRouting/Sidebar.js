@@ -5,9 +5,12 @@ export default function Sidebar(){
         {
             label: 'DropDown', path: '/dropDown'
         },{
-            label: 'Accordion', path: '/'
+            label: 'Accordion', path: '/accordion'
         },{
             label: 'Buttons', path: '/buttons'
+        },
+        {
+            label: 'Modal', path: '/modalPage'
         },
     ];
 
