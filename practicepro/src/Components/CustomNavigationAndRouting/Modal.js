@@ -1,9 +1,13 @@
-// import { useState } from "react";
 
 export  default function Modal(){
-    // const[expand, setExpand] = useState(0);
- 
+
     return(
-        <p>hello world</p>
+        <div>
+            <div className="absolute inset-0 bg-gray-300 opacity-80"></div>
+            
+            <div className="absolute inset-40 p-10 bg-white">
+                I am a modal 
+            </div>
+        </div>
     );
 };

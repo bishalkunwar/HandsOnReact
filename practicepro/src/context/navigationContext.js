@@ -24,7 +24,7 @@ export function NavigationProvider({children}){
 
     return(
         <NavigationContext.Provider value={{currentPath, navigate}}>
-            {children};
+            {children}
         </NavigationContext.Provider>
     )
 }
