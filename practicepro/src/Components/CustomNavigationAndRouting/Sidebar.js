@@ -8,10 +8,12 @@ export default function Sidebar(){
             label: 'Accordion', path: '/accordion'
         },{
             label: 'Buttons', path: '/buttons'
-        },
-        {
+        },{
             label: 'Modal', path: '/modalPage'
+        },{
+            label: 'Table', path: '/tablePage'
         },
+
     ];
 
     const renderLinks = links.map((link)=>{

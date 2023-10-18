@@ -6,6 +6,7 @@ import DropDownPage from "./DropDownPages";
 import Route from "../CustomNavigationAndRouting/Route";
 import Sidebar from "../CustomNavigationAndRouting/Sidebar";
 import ModalPage from "./ModalPage";
+import Table from "../Table/Table";
 
 export default function Home(){
 
@@ -30,6 +31,9 @@ export default function Home(){
                 </Route>
                 <Route path="/modalPage">
                     <ModalPage/>
+                </Route>
+                <Route path="/tablePage">
+                    <Table/>
                 </Route>
             </div>
         </div>
