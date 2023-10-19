@@ -12,6 +12,8 @@ export default function Sidebar(){
             label: 'Modal', path: '/modalPage'
         },{
             label: 'Table', path: '/tablePage'
+        },{
+            label: 'Counter', path: '/counterPage'
         },
 
     ];

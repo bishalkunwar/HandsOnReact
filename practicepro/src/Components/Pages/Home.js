@@ -7,6 +7,7 @@ import Route from "../CustomNavigationAndRouting/Route";
 import Sidebar from "../CustomNavigationAndRouting/Sidebar";
 import ModalPage from "./ModalPage";
 import TablePage from "../Pages/TablePage";
+import CounterPage from "./CounterPAge";
 
 export default function Home(){
 
@@ -34,6 +35,9 @@ export default function Home(){
                 </Route>
                 <Route path="/tablePage">
                     <TablePage/>
+                </Route>
+                <Route path="/counterPage">
+                    <CounterPage initialCount={5}/>
                 </Route>
             </div>
         </div>
