@@ -7,7 +7,7 @@ import Panel from "../CustomNavigationAndRouting/Panel";
 const INCREMENT = "increment";
 const DECREMENT = "decrement";
 const CHANGE_VALUE_TO_ADD = "change_value_to_add";
-
+const ADD_VALUE = "add-value";
 
 const reducer = (state, action) => {
    
@@ -28,6 +28,13 @@ const reducer = (state, action) => {
                 ...state,
                 valueToAdd: action.payload
             }; 
+
+        case ADD_VALUE:
+            return{
+                ...state,
+                count: state.count + action.payload,
+                valueToAdd:0,
+            };
 
         default:
             return state;
@@ -76,14 +83,14 @@ export default function CounterPage({initialCount}){
     
     const decrement = () =>{
         dispatch({
-            type: 'decrement' // this is the community convention , we can pass any strings.
+            type: DECREMENT // this is the community convention , we can pass any strings.
         });
         // setCount(count-1);
     };
 
     const increment = () => {
         dispatch({
-            type: 'increment'
+            type: INCREMENT
         });
         // setCount(count+1);
     };
@@ -92,13 +99,18 @@ export default function CounterPage({initialCount}){
         const value = parseInt(event.target.value) || 0;
 
         dispatch({
-            type: 'change-value-to-add',
+            type: CHANGE_VALUE_TO_ADD,
             payload: value  // Payload is optional.
         });
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        dispatch({
+            type: ADD_VALUE,
+            payload: state.valueToAdd, // Add the valueToAdd to count
+        });
     }
     
     return(
