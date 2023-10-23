@@ -20,4 +20,14 @@ const store = configureStore({
     }
 });
 
-console.log(store);
+export {store};
+
+// const startingState = store.getState();
+// console.log(JSON.stringify(startingState));
+
+// store.dispatch(songsSlice.actions.addSong("new song"));
+
+// const finalState = store.getState();
+// console.log(JSON.stringify(finalState));  
+
+
