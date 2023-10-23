@@ -7,7 +7,7 @@ import Route from "../CustomNavigationAndRouting/Route";
 import Sidebar from "../CustomNavigationAndRouting/Sidebar";
 import ModalPage from "./ModalPage";
 import TablePage from "../Pages/TablePage";
-import CounterPage from "./CounterPAge";
+import CounterPage from "./CounterPage";
 
 export default function Home(){
 
