@@ -11,36 +11,61 @@ const CHANGE_VALUE_TO_ADD = "change_value_to_add";
 
 const reducer = (state, action) => {
    
-    if(action.type === INCREMENT){
-        return{
-            ...state,
-            count: state.count+1,
-        };
-    };
+    switch(action.type){
+        case INCREMENT:
+            return{
+                ...state,
+                count: state.count+1,
+            };
+        case DECREMENT:
+            return{
+                ...state,
+                count: state.count-1
+            };
+
+        case CHANGE_VALUE_TO_ADD:
+            return{
+                ...state,
+                valueToAdd: action.payload
+            }; 
+
+        default:
+            return state;
+            // throw new Error('Unexpected action type: '+action.type);
+    }
+}
+
+
+//     if(action.type === INCREMENT){
+//         return{
+//             ...state,
+//             count: state.count+1,
+//         };
+//     };
     
-    if(action.type === DECREMENT){
-        return{
-            ...state,
-            count: state.count-1
-        };
-    };
+//     if(action.type === DECREMENT){
+//         return{
+//             ...state,
+//             count: state.count-1
+//         };
+//     };
 
-    if(action.type === CHANGE_VALUE_TO_ADD){
-        return{
-            ...state,
-            valueToAdd: action.payload
-        };
-    };
+//     if(action.type === CHANGE_VALUE_TO_ADD){
+//         return{
+//             ...state,
+//             valueToAdd: action.payload
+//         };
+//     };
 
-    //    return{
-    //     ...state,
-    //     count: state.count + 1
-    //    };
+//     //    return{
+//     //     ...state,
+//     //     count: state.count + 1
+//     //    };
    
-    // // Bad practice, coz we should not state the objects directly.
-    // state.count =  state.count+1,
-    // return state; // this type of state handle will cause mutate the object. 
-};
+//     // // Bad practice, coz we should not state the objects directly.
+//     // state.count =  state.count+1,
+//     // return state; // this type of state handle will cause mutate the object. 
+// };
 
 export default function CounterPage({initialCount}){
     const [state, dispatch] = useReducer(reducer, {count: initialCount, valueToAdd: 0});
@@ -91,4 +116,4 @@ export default function CounterPage({initialCount}){
             </form>
         </Panel>
     );
-};
+}
