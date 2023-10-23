@@ -8,6 +8,7 @@ import Sidebar from "../CustomNavigationAndRouting/Sidebar";
 import ModalPage from "./ModalPage";
 import TablePage from "../Pages/TablePage";
 import CounterPage from "./CounterPage";
+// import ReduxHome from "../../reduxTry/ReduxHome";
 
 export default function Home(){
 
@@ -39,6 +40,9 @@ export default function Home(){
                 <Route path="/counterPage">
                     <CounterPage initialCount={5}/>
                 </Route>
+                {/* <Route path="/reduxHome">
+                    <ReduxHome/>
+                </Route> */}
             </div>
         </div>
     )
