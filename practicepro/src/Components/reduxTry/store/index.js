@@ -33,11 +33,17 @@ const moviesSlice = createSlice({
             state.splice(state.indexOf(action.payload, 1));
         }, 
 
-        resetMovie(state, action){
+        // resetMovie(state, action){
+        //     return [];
+        // }
+    },
+
+    extraReducers(builder){
+        builder.addCase('song/resetSong', (state, action)=>{
             return [];
-        }
+        });
     }
-})
+});
 
 const store = configureStore({
     reducer: {
@@ -48,7 +54,7 @@ const store = configureStore({
 
 export {store};
 export const {addSong, removeSong, resetSong} = songsSlice.actions;
-export const {addMovie, removeMovie, resetMovie} = moviesSlice.actions;
+export const {addMovie, removeMovie} = moviesSlice.actions;
 
 // const startingState = store.getState();
 // console.log(JSON.stringify(startingState));
