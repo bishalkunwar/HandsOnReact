@@ -4,12 +4,26 @@
 // import ReduxHome from "./Components/reduxTry/ReduxHome";
 import SongsLists from "./Components/reduxTry/CompFiles/Songslis";
 import MoviesLists from "./Components/reduxTry/CompFiles/VideoLists";
+import { useDispatch } from "react-redux";
+import { resetMovie, resetSong } from "./Components/reduxTry/store/index";
+
 function App(){
+
+  const dispatch = useDispatch();
+  const handleResetClick = () => {
+    dispatch(resetMovie());
+    dispatch(resetSong());
+  }
+
   return(
     <div>
       <SongsLists/>
       <hr/>
       <MoviesLists/>
+      <br/><br/>
+      <button onClick={handleResetClick}>
+        Reset Both 
+      </button>
     </div>
     
   );
