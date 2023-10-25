@@ -5,13 +5,13 @@
 import SongsLists from "./Components/reduxTry/CompFiles/Songslis";
 import MoviesLists from "./Components/reduxTry/CompFiles/VideoLists";
 import { useDispatch } from "react-redux";
-import { resetSong } from "./Components/reduxTry/store/index";
+import { reset } from "./Components/reduxTry/store/index";
 
 function App(){
 
   const dispatch = useDispatch();
   const handleResetClick = () => {
-    dispatch(resetSong());
+    dispatch(reset());
   }
 
   return(

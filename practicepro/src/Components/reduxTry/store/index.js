@@ -1,60 +1,18 @@
-import {configureStore, createSlice} from '@reduxjs/toolkit';
+import {configureStore} from '@reduxjs/toolkit';
+import { songReducer, addSong, removeSong } from '../Slices/songSlice';
+import { movieReducer, addMovie, removeMovie } from '../Slices/movieSlice';
+import { reset } from './action';
 
-const songsSlice = createSlice({
-    name: 'song', 
-    initialState: [],
-    reducers: {
-        addSong(state, action){
-            state.push(action.payload)
-        },
-
-        removeSong(state, action){
-            // action.payload === string, the song that we want to delete.
-            const indexToDelete = state.indexOf(action.payload);
-            state.splice(indexToDelete, 1);
-
-        }, 
-
-        resetSong(state, action){
-            return [];
-        }
-    },
-});
-
-const moviesSlice = createSlice({
-    name: "movie",
-    initialState: [],
-    reducers: {
-        addMovie(state, action){
-            state.push(action.payload)
-        },
-
-        removeMovie(state, action){ 
-            state.splice(state.indexOf(action.payload, 1));
-        }, 
-
-        // resetMovie(state, action){
-        //     return [];
-        // }
-    },
-
-    extraReducers(builder){
-        builder.addCase(songsSlice.actions.resetSong, (state, action)=>{
-            return [];
-        });
-    }
-});
 
 const store = configureStore({
     reducer: {
-        songs: songsSlice.reducer,
-        movies: moviesSlice.reducer
+        songs: songReducer,
+        movies: movieReducer
     }
 });
 
-export {store};
-export const {addSong, removeSong, resetSong} = songsSlice.actions;
-export const {addMovie, removeMovie} = moviesSlice.actions;
+export {store, reset, addMovie, removeMovie, addSong, removeSong};
+
 
 // const startingState = store.getState();
 // console.log(JSON.stringify(startingState));
@@ -65,3 +23,54 @@ export const {addMovie, removeMovie} = moviesSlice.actions;
 // console.log(JSON.stringify(finalState));  
 
 
+
+
+
+
+
+// const songsSlice = createSlice({
+//     name: 'song', 
+//     initialState: [],
+//     reducers: {
+//         addSong(state, action){
+//             state.push(action.payload)
+//         },
+
+//         removeSong(state, action){
+//             // action.payload === string, the song that we want to delete.
+//             const indexToDelete = state.indexOf(action.payload);
+//             state.splice(indexToDelete, 1);
+
+//         }, 
+//     },
+
+//     extraReducers(builder){
+//         builder.addCase(reset, (state, action)=> {
+//             return [];
+//         })
+//     }
+// });
+
+// const moviesSlice = createSlice({
+//     name: "movie",
+//     initialState: [],
+//     reducers: {
+//         addMovie(state, action){
+//             state.push(action.payload)
+//         },
+
+//         removeMovie(state, action){ 
+//             state.splice(state.indexOf(action.payload, 1));
+//         }, 
+
+//         // resetMovie(state, action){
+//         //     return [];
+//         // }
+//     },
+
+//     extraReducers(builder){
+//         builder.addCase(reset, (state, action)=>{
+//             return [];
+//         });
+//     }
+// });
