@@ -9,6 +9,9 @@ const songsSlice = createSlice({
         },
 
         removeSong(state, action){
+            // action.payload === string, the song that we want to delete.
+            const indexToDelete = state.indexOf(action.payload);
+            state.splice(indexToDelete, 1);
 
         }
     },
@@ -21,6 +24,7 @@ const store = configureStore({
 });
 
 export {store};
+export const {addSong, removeSong} = songsSlice.actions;
 
 // const startingState = store.getState();
 // console.log(JSON.stringify(startingState));

@@ -1,12 +1,12 @@
 // import Home from "./Components/Pages/Home";
 // <Home/>
 
-import ReduxHome from "./Components/reduxTry/ReduxHome";
-
+// import ReduxHome from "./Components/reduxTry/ReduxHome";
+import SongsLists from "./Components/reduxTry/CompFiles/Songslis";
 function App(){
   return(
     <div>
-      <ReduxHome/>
+      <SongsLists/>
     </div>
     
   );
