@@ -26,7 +26,7 @@ const moviesSlice = createSlice({
         },
 
         removeMovie(state, action){ 
-            state.splice(state.indexOf(action.payload(1)));
+            state.splice(state.indexOf(action.payload, 1));
         }
     }
 })

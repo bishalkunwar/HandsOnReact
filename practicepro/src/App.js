@@ -3,10 +3,13 @@
 
 // import ReduxHome from "./Components/reduxTry/ReduxHome";
 import SongsLists from "./Components/reduxTry/CompFiles/Songslis";
+import MoviesLists from "./Components/reduxTry/CompFiles/VideoLists";
 function App(){
   return(
     <div>
       <SongsLists/>
+      <hr/>
+      <MoviesLists/>
     </div>
     
   );
