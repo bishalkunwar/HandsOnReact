@@ -24,6 +24,8 @@ export default function DogForm(){
     const handleSubmit = (event) => {
         event.preventDefault();
         dispatch(addDog({name: name, cost: cost}));
+        dispatch(changeName(''));
+        dispatch(changeCost(0));
     }
 
     return(

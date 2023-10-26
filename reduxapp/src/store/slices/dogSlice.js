@@ -4,7 +4,7 @@ const dogSlice = createSlice({
     name: 'dogs',
     initialState: {
         searchTerm: '',
-        dogs: []
+        data: []
     },
 
     reducers: {
@@ -12,18 +12,18 @@ const dogSlice = createSlice({
             state.searchTerm = action.payload;
         },
         addDog(state, action){
-            state.dogs.push({
+            state.data.push({
                 name: action.payload.name,
                 cost: action.payload.cost,
                 id: nanoid(),
             });
         },
         removeDog(state, action){
-            const dogToDelete = state.dogs.filter((dog)=> {
+            const dogToDelete = state.data.filter((dog)=> {
                 return dog.id !== action.payload;
             });
 
-            state.dogs = dogToDelete;
+            state.data = dogToDelete;
         },
         
     },
