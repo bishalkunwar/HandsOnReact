@@ -5,10 +5,15 @@ export default function DogLists(){
 
     const dispatch = useDispatch();
 
-    const dogs = useSelector(({dogs: {data, searchTerm}})=>{
-        return data.filter((dog)=>
+    const {dogs, name} = useSelector(({form, dogs: {data, searchTerm}})=>{
+        const filteredDogs = data.filter((dog)=>
             dog.name.toLowerCase().includes(searchTerm.toLowerCase())
-        )
+        );
+
+        return{
+            dogs: filteredDogs,
+            name: form.name
+        }
     })
 
     const handleDogDelete = (dog) => {
@@ -16,8 +21,10 @@ export default function DogLists(){
     };
 
     const renderedDogs = dogs.map((dog)=>{
+        const bold = name && dog.name.toLowerCase().includes(name.toLowerCase());
+
         return(
-            <div key={dog.id} className="panel">
+            <div key={dog.id} className={`panel ${bold&&'bold'}`}>
                 <p>
                     {dog.name} - ${dog.cost}
                 </p>
@@ -27,6 +34,8 @@ export default function DogLists(){
             </div>
         )
     });
+
+
 
 
     return(
