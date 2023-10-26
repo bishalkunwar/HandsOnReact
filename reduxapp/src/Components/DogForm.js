@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { changeCost, changeName } from "../store";
+import { changeCost, changeName, addDog } from "../store";
 
 
 export default function DogForm(){
@@ -17,14 +17,19 @@ export default function DogForm(){
     };
 
     const handleCostChange = (event) => {
-       const dogCost = parseInt(event.target.value) || 0
-       dispatch(changeCost(dogCost))
+       const dogCost = parseInt(event.target.value) || 0;
+       dispatch(changeCost(dogCost));
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        dispatch(addDog({name: name, cost: cost}));
     }
 
     return(
         <div className="dog-form panel">
         <h4 className="subtitle is-3">Add a Dog</h4>
-        <form>
+        <form onSubmit={handleSubmit}>
             <div className="field-group">
                 <div className="field">
                     <label className="label">Name</label>
@@ -34,6 +39,9 @@ export default function DogForm(){
                     <label className="label">Cost</label>
                     <input className="input is-expanded" value={cost || 0} onChange={handleCostChange}/>
                 </div>
+            </div>
+            <div className="field">
+                <button className="button is-link">Submit</button>
             </div>
         </form>
         </div>
