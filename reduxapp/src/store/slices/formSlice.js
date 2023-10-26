@@ -1,6 +1,6 @@
 
 import {createSlice} from "@reduxjs/toolkit";
-
+import { addDog } from "./dogSlice";
 
 const formSlice = createSlice({
     name: "form",
@@ -15,6 +15,12 @@ const formSlice = createSlice({
         changeCost(state, action){  
             state.cost = action.payload;
         }
+    },
+    extraReducers(builder){
+        builder.addCase(addDog, (state, action)=>{
+            state.name='';
+            state.cost = 0;
+        })
     }
 })
 
