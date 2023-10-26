@@ -5,8 +5,10 @@ export default function DogLists(){
 
     const dispatch = useDispatch();
 
-    const dogs = useSelector((state)=>{
-        return state.dogs.data;
+    const dogs = useSelector(({dogs: {data, searchTerm}})=>{
+        return data.filter((dog)=>
+            dog.name.toLowerCase().includes(searchTerm.toLowerCase())
+        )
     })
 
     const handleDogDelete = (dog) => {
