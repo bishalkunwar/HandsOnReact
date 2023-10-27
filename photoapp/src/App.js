@@ -1,12 +1,12 @@
-import Button from "./components/button";
-import Panel from "./components/panel";
+// import Button from "./components/Button";
+// import Panel from "./components/Panel";
+import UserLists from "./components/UserLists";
+
 
 function App() {
   return (
-    <div className="App">
-      <Panel>
-        <Button primary>Button</Button>
-      </Panel>
+    <div className="container mx-auto">
+      <UserLists/>
     </div>
   );
 }
