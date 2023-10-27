@@ -1,8 +1,12 @@
+import Button from "./components/button";
+import Panel from "./components/panel";
 
 function App() {
   return (
     <div className="App">
-      <p>This is my app</p>
+      <Panel>
+        <Button primary>Button</Button>
+      </Panel>
     </div>
   );
 }
