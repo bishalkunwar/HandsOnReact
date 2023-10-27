@@ -1,9 +1,10 @@
-import {cofigureStore} from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import { userReducer } from "./slices/UserSlices";
 
-export const store = cofigureStore({
+export const store = configureStore({
     reducer: {
         users: userReducer,
     },
 });
 
+export * from './thunk/fetchUsers';
