@@ -1,7 +1,26 @@
 {
-    "users": [
-        {"id": 1, "name": "Bishal"}
-    ],
-    "albums": [],
-    "photos": []
+  "users": [
+    {
+      "id": 1,
+      "name": "Bishal"
+    },
+    {
+      "name": "Tony Greenholt",
+      "id": 2
+    },
+    {
+      "name": "Santos Jacobson",
+      "id": 3
+    },
+    {
+      "name": "Naomi Franey",
+      "id": 4
+    },
+    {
+      "name": "Alicia Kohler Sr.",
+      "id": 5
+    }
+  ],
+  "albums": [],
+  "photos": []
 }
