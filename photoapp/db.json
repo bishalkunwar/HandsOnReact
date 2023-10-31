@@ -1,50 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Bishal"
-    },
-    {
-      "name": "Tony Greenholt",
-      "id": 2
-    },
-    {
-      "name": "Santos Jacobson",
-      "id": 3
-    },
-    {
-      "name": "Naomi Franey",
-      "id": 4
-    },
-    {
-      "name": "Alicia Kohler Sr.",
-      "id": 5
-    },
-    {
-      "name": "Kathy Hartmann",
-      "id": 6
-    },
-    {
-      "name": "Katie Krajcik",
-      "id": 7
-    },
-    {
-      "name": "Ruth Boehm",
-      "id": 8
-    },
-    {
-      "name": "Ismael Abernathy",
-      "id": 9
-    },
-    {
-      "name": "Erika Hirthe DDS",
-      "id": 10
-    },
-    {
-      "name": "Jennie Ankunding IV",
-      "id": 11
-    },
-    {
       "name": "Brooke Wilderman",
       "id": 12
     },

@@ -2,6 +2,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchUsers } from "../thunk/fetchUsers";
 import { addUser } from "../thunk/addUser";
+import { deleteUser } from "../thunk/deleteUser";
 
 const userSlices = createSlice({
     name: "users",
@@ -32,12 +33,29 @@ const userSlices = createSlice({
         builder.addCase(addUser.fulfilled, (state, action)=>{
             state.isLoading = false;
             state.data.push(action.payload);
-        })
+        });
 
         builder.addCase(addUser.rejected, (state, action)=>{
             state.isLoading = false;
             state.error = action.error;
-        })
+        });
+
+        builder.addCase(deleteUser.pending, (state,action)=>{
+            state.isLoading = true;
+        });
+
+        builder.addCase(deleteUser.fulfilled, (state, action)=>{
+            state.isLoading = false;
+            state.data = state.data.filter(user=>{
+                return user.id !== action.payload.id; 
+            });
+        });
+
+        builder.addCase(deleteUser.rejected, (state, action)=>{
+            state.isLoading = false;
+            state.error = action.error;
+        });
+
     },
 
 });
