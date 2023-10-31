@@ -92,11 +92,7 @@ export default function UserLists(){
                 <h1 className="m-2 text-xl">
                     Users
                 </h1>
-                {
-                    isCreatingUser 
-                    ? 'Creating User' 
-                    : <Button onClick={handleAddUser}>+ Add User</Button>
-                }
+                <Button onClick={handleAddUser} loading={isCreatingUser}>+ Add User</Button>
                 {creatingUserError && 'Error Creating User'}
             </div>
             <div>{renderedUsers}</div>
