@@ -1,45 +1,73 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect} from "react";
+import { useSelector } from "react-redux";
 import { fetchUsers, addUser} from "../store";
 import Button from "./Button";
 import Skeleton from "./Skeleton";
+import useThunk from "../hooks/use-thunk";
+
+// below code is into the thunk hook
+
+// function useThunk(thunk){
+//     const[isLoading, setIsLoading] = useState(false);
+//     const[error, setError] = useState(null);
+//     const dispatch = useDispatch();
+
+//     const runThunk = useCallback((arg)=> {
+//         setIsLoading(true);
+//         dispatch(thunk(arg))
+//             .unwrap()
+//             .catch((err)=>setError(err))
+//             .finally(()=>setIsLoading(false));
+//     }, [dispatch, thunk]);
+
+//     return[runThunk, isLoading, error];
+
+// }
 
 export default function UserLists(){
-    
-    const[isLoadingUsers, setIsLoadingUsers] = useState(false);
-    const[loadingUsersError, setLoadingUsersError] = useState(null);
-    const[isCreatingUser, setIsCreatingUser] = useState(false);
-    const[creatingUserError, setCreatingUserError] = useState(null);
-    const dispatch = useDispatch();
+    // const[isLoadingUsers, setIsLoadingUsers] = useState(false);
+    // const[loadingUsersError, setLoadingUsersError] = useState(null);
+    const [doFetchUsers, isLoadingUsers, loadingUsersError] = useThunk(fetchUsers);
+    const[doCreateUser, isCreatingUser, creatingUserError] = useThunk(addUser);
+    // const[isCreatingUser, setIsCreatingUser] = useState(false);
+    // const[creatingUserError, setCreatingUserError] = useState(null);
+    // const dispatch = useDispatch();
 
     const{data} = useSelector((state)=>{
         return state.users;
     })
 
     useEffect(()=>{
-        setIsLoadingUsers(true);
-        dispatch(fetchUsers())
-            .unwrap()
-            // .then(()=>{
-            //     // console.log("Success");
-            //     setIsLoadingUsers(false);
-            // })
-            .catch((err)=>
-                // console.log("Fail");
-                setLoadingUsersError(err)
-            ).finally(()=>
-                setIsLoadingUsers(false) // finally is gonna get called anyway so we can remove the then function.
-            );
+        doFetchUsers();
+    }, [doFetchUsers]);
 
-    }, [dispatch]);
+    // useEffect(()=>{
+    //     setIsLoadingUsers(true);
+    //     dispatch(fetchUsers())
+    //         .unwrap()
+    //         // .then(()=>{
+    //         //     // console.log("Success");
+    //         //     setIsLoadingUsers(false);
+    //         // })
+    //         .catch((err)=>
+    //             // console.log("Fail");
+    //             setLoadingUsersError(err)
+    //         ).finally(()=>
+    //             setIsLoadingUsers(false) // finally is gonna get called anyway so we can remove the then function.
+    //         );
+
+    // }, [dispatch]);
 
     const handleAddUser = () => {
-        setIsCreatingUser(true);
-        dispatch(addUser())
-            .unwrap()
-            // .then(())
-            .catch((error)=>setCreatingUserError(error))
-            .finally(()=>setIsCreatingUser(false));
+
+        doCreateUser();
+
+        // setIsCreatingUser(true);
+        // dispatch(addUser())
+        //     .unwrap()
+        //     // .then(())
+        //     .catch((error)=>setCreatingUserError(error))
+        //     .finally(()=>setIsCreatingUser(false));
     };
 
     if(isLoadingUsers){
