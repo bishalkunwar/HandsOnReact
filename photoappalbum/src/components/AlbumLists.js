@@ -1,6 +1,5 @@
 import { useFetchAlbumsQuery, useAddAlbumMutation, useDeleteAlbumMutation } from "../store";
 import Skeleton from "./Skeleton";
-import ExpandablePanel from "./ExpandablePanel";
 import Button from "./Button";
 import AlbumListItem from "./AlbumListItems";
 
