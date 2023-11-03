@@ -15,14 +15,49 @@
   ],
   "albums": [
     {
-      "id": 234, 
+      "id": 234,
       "title": "Hiking Trip",
       "userId": 13
     },
     {
-      "id": 235, 
+      "id": 235,
       "title": "Hiking Trip2",
       "userId": 12
+    },
+    {
+      "userId": 12,
+      "title": "Licensed Metal Shirt",
+      "id": 236
+    },
+    {
+      "userId": 12,
+      "title": "Ergonomic Frozen Sausages",
+      "id": 237
+    },
+    {
+      "userId": 14,
+      "title": "Practical Concrete Bike",
+      "id": 238
+    },
+    {
+      "userId": 14,
+      "title": "Bespoke Bronze Chair",
+      "id": 239
+    },
+    {
+      "userId": 12,
+      "title": "Elegant Plastic Car",
+      "id": 240
+    },
+    {
+      "userId": 12,
+      "title": "Handmade Bronze Tuna",
+      "id": 241
+    },
+    {
+      "userId": 14,
+      "title": "Tasty Cotton Computer",
+      "id": 242
     }
   ],
   "photos": []
