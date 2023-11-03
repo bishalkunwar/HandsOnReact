@@ -15,6 +15,6 @@ export default function AlbumListItem({album}){
 
     return (
         <ExpandablePanel key={album.id} header={header}>
-            <PhotoLists album={album}d/>
+            <PhotoLists album={album}/>
         </ExpandablePanel>
 )};

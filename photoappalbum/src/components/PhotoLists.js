@@ -1,8 +1,9 @@
-import PhotoListItems from "./PhotoListItems";
+// import PhotoListItems from "./PhotoListItems";
+import { useFetchPhotosQuery } from "../store";
 
 export default function PhotoLists({album}){
-
+    useFetchPhotosQuery(album);
     return (
-        <PhotoListItems album={album}/>
+        "hello"
     );
 };
