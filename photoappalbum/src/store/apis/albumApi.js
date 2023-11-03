@@ -54,7 +54,7 @@ const albumsApi = createApi({
             // providesTags: ['albums'],
             invalidatesTags: (album, result, error)=> {
                console.log(album);
-               return [];
+               return [{type: 'album', id: album.userId}];
             },
             query: (album)=>{
                return{
