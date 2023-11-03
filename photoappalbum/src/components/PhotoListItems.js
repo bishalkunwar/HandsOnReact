@@ -1,6 +1,6 @@
 
-export default function PhotoListItems(){
+export default function PhotoListItems({album}){
     return(
-        <p>hello photo lists</p>
+        "<p>hello photo lists</p>"
     );
 };

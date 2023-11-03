@@ -5,7 +5,7 @@ import {useDeleteAlbumMutation} from "../store";
 import PhotoLists from "./PhotoLists";
 
 export default function AlbumListItem({album}){
-    const[deleteAlbum, results] = useDeleteAlbumMutation();
+    const[deleteAlbum] = useDeleteAlbumMutation();
     
     const handleAlbumDelete = () => {
         deleteAlbum(album);
