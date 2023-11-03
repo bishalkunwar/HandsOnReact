@@ -22,7 +22,8 @@ export default function AlbumList({user}){
         content=<div>Error Loading Albums</div>
     }else{
         content = data.map(album=>{
-            
+            return <AlbumListItem key={album.id} album={album} />;
+
             // const header = <div>{album.title}</div>;
 
             // return <ExpandablePanel key={album.id} header={header}>
