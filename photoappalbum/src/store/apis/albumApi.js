@@ -50,20 +50,20 @@ const albumsApi = createApi({
             }
          }),
 
-         deleteAlbun: builder.mutation({
+         deleteAlbum: builder.mutation({
             providesTags: ['albums'],
-            query: (user)=>{
+            query: (album)=>{
                return{
-                  url: '/albums',
+                  url: `/albums/${album.id}`,
                   method: 'DELETE',
 
-               }
+               };
             }
          })
       }
    }
 });
 
-export const {useFetchAlbumsQuery, useAddAlbumMutation} = albumsApi;
+export const {useFetchAlbumsQuery, useAddAlbumMutation, useDeleteAlbumMutation} = albumsApi;
 export {albumsApi};
 // albumsApi.useFetchAlbumsQuery();

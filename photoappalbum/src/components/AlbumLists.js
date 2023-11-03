@@ -1,13 +1,15 @@
-import { useFetchAlbumsQuery, useAddAlbumMutation } from "../store";
+import { useFetchAlbumsQuery, useAddAlbumMutation, useDeleteAlbumMutation } from "../store";
 import Skeleton from "./Skeleton";
 import ExpandablePanel from "./ExpandablePanel";
 import Button from "./Button";
+import AlbumListItem from "./AlbumListItems";
 
 export default function AlbumList({user}){
     
     const {data, error, isLoading} = useFetchAlbumsQuery(user);
     const[addAlbum, results] = useAddAlbumMutation();
     useFetchAlbumsQuery(user);
+    const [deleteAlbum, deleteAlbumResult] = useDeleteAlbumMutation();
     const handleAddAlbums = () => {
         addAlbum(user);
     };
@@ -20,11 +22,12 @@ export default function AlbumList({user}){
         content=<div>Error Loading Albums</div>
     }else{
         content = data.map(album=>{
-            const header = <div>{album.title}</div>;
+            
+            // const header = <div>{album.title}</div>;
 
-            return <ExpandablePanel key={album.id} header={header}>
-                Lists of photos in the album
-            </ExpandablePanel>
+            // return <ExpandablePanel key={album.id} header={header}>
+            //     Lists of photos in the album
+            // </ExpandablePanel>
         })
     }
 
