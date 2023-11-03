@@ -4,7 +4,7 @@ import Button from "./Button";
 import Skeleton from "./Skeleton";
 import PhotoListItems from "./PhotoListItems";
 
-export default function PhotoLists({album}){
+export default function PhotosLists({album}){
     const {data, isFetching, error} = useFetchPhotosQuery(album);
     const[addPhoto, addPhotoResults] = useAddPhotosMutation();
 
