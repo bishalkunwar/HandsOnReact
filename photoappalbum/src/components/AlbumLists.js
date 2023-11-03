@@ -30,9 +30,9 @@ export default function AlbumList({user}){
 
     return(
         <div>
-            <div>
-                albums for {user.name}
-                <Button onClick={handleAddAlbums}>+ Add Album</Button>
+            <div className="m-2 flex flex-row items-center justify-between">
+                <h3 className="text-lg font-bold">albums for {user.name}</h3>
+                <Button onClick={handleAddAlbums} loading={results.isLoading}>+ Add Album</Button>
             </div>
             <div>
                 {content}
