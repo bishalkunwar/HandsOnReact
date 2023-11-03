@@ -45,16 +45,6 @@
       "id": 239
     },
     {
-      "userId": 12,
-      "title": "Elegant Plastic Car",
-      "id": 240
-    },
-    {
-      "userId": 12,
-      "title": "Handmade Bronze Tuna",
-      "id": 241
-    },
-    {
       "userId": 14,
       "title": "Tasty Cotton Computer",
       "id": 242
@@ -81,11 +71,6 @@
     },
     {
       "userId": 13,
-      "title": "Awesome Frozen Hat",
-      "id": 247
-    },
-    {
-      "userId": 13,
       "title": "Small Cotton Sausages",
       "id": 248
     },
@@ -103,11 +88,6 @@
       "userId": 14,
       "title": "Luxurious Metal Towels",
       "id": 251
-    },
-    {
-      "userId": 12,
-      "title": "Handmade Plastic Keyboard",
-      "id": 252
     }
   ],
   "photos": []

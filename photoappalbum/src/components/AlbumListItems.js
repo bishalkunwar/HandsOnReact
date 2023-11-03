@@ -1,19 +1,17 @@
-import {GoTrashCan} from "react-icons/go";
+import {GoTrash} from "react-icons/go";
 import Button from "./Button";
 import ExpandablePanel from "./ExpandablePanel";
-import { useState } from "react";
+import {useDeleteAlbumMutation} from "../store";
 
 
 export default function AlbumListItem({album}){
-    const[deleting, setDeleting] = useState(false);
+    const[deleteAlbum, results] = useDeleteAlbumMutation();
     
     const handleAlbumDelete = () => {
-        return(
+        deleteAlbum(album);
+    };
 
-        )
-    }
-
-    const header = (<div><Button onClick={handleAlbumDelete}><GoTrashCan/></Button>{album.title}</div>);
+    const header = (<div><Button onClick={handleAlbumDelete}><GoTrash/></Button>{album.title}</div>);
 
     return (
         <ExpandablePanel key={album.id} header={header}>
