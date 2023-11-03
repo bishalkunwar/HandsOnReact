@@ -1,93 +1,15 @@
 {
   "users": [
     {
-      "name": "Brooke Wilderman",
-      "id": 12
-    },
-    {
-      "name": "Edwin Jacobs",
-      "id": 13
-    },
-    {
-      "name": "Dallas Jacobs Jr.",
-      "id": 14
+      "name": "Tamara Senger",
+      "id": 1
     }
   ],
   "albums": [
     {
-      "id": 234,
-      "title": "Hiking Trip",
-      "userId": 13
-    },
-    {
-      "id": 235,
-      "title": "Hiking Trip2",
-      "userId": 12
-    },
-    {
-      "userId": 12,
-      "title": "Licensed Metal Shirt",
-      "id": 236
-    },
-    {
-      "userId": 12,
-      "title": "Ergonomic Frozen Sausages",
-      "id": 237
-    },
-    {
-      "userId": 14,
-      "title": "Practical Concrete Bike",
-      "id": 238
-    },
-    {
-      "userId": 14,
-      "title": "Bespoke Bronze Chair",
-      "id": 239
-    },
-    {
-      "userId": 14,
-      "title": "Tasty Cotton Computer",
-      "id": 242
-    },
-    {
-      "userId": 14,
-      "title": "Recycled Plastic Fish",
-      "id": 243
-    },
-    {
-      "userId": 14,
-      "title": "Handcrafted Wooden Towels",
-      "id": 244
-    },
-    {
-      "userId": 14,
-      "title": "Licensed Fresh Gloves",
-      "id": 245
-    },
-    {
-      "userId": 13,
-      "title": "Modern Granite Bike",
-      "id": 246
-    },
-    {
-      "userId": 13,
-      "title": "Small Cotton Sausages",
-      "id": 248
-    },
-    {
-      "userId": 13,
-      "title": "Modern Metal Towels",
-      "id": 249
-    },
-    {
-      "userId": 14,
-      "title": "Rustic Cotton Computer",
-      "id": 250
-    },
-    {
-      "userId": 14,
-      "title": "Luxurious Metal Towels",
-      "id": 251
+      "userId": 1,
+      "title": "Oriental Plastic Sausages",
+      "id": 1
     }
   ],
   "photos": []
