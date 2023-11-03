@@ -1,6 +1,8 @@
 
-export default function PhotoListItems({album}){
+export default function PhotoListItems({photo}){
     return(
-        "<p>hello photo lists</p>"
+        <div>
+            <img className="h-20 w-20" src={photo.url} alt="hiiPhoto"/>
+        </div>
     );
 };
